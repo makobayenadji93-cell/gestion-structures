@@ -40,8 +40,8 @@ public class Main {
                 case 1 -> {
                     ConsoleStyle.ligneSimple();
                     System.out.print(ConsoleStyle.JAUNE + "  Avez deja un compte (oui/non) ?     : " + ConsoleStyle.RESET);
-                    String reponse=sc.nextLine();
-                    if(reponse.equals("oui")){
+                    String reponse = sc.nextLine();
+                    if (reponse.equals("oui")) {
                         System.out.print(ConsoleStyle.JAUNE + "  [LOGIN/Connexion] Nom    : " + ConsoleStyle.RESET);
                         String login = sc.nextLine();
                         System.out.print(ConsoleStyle.JAUNE + "  Mot de passe : " + ConsoleStyle.RESET);
@@ -52,25 +52,25 @@ public class Main {
                         } else {
                             ConsoleStyle.erreur("Login ou mot de passe incorrect.");
                         }
-                    }else if(reponse.equals("non")){
+                    } else if (reponse.equals("non")) {
                         System.out.print(ConsoleStyle.JAUNE + "  [SIGNUP/inscription] Nom    : " + ConsoleStyle.RESET);
                         String login = sc.nextLine();
                         System.out.print(ConsoleStyle.JAUNE + "  Mot de passe : " + ConsoleStyle.RESET);
                         String mdp = sc.nextLine();
-                        if(Authentification.loginExisteAdmin(login)){
-                            System.out.println(login+" possede deja un compte");
-                        }else{
-                            Authentification.ajouterAdmin(login,mdp);
+                        if (Authentification.loginExisteAdmin(login)) {
+                            System.out.println(login + " possede deja un compte");
+                        } else {
+                            Authentification.ajouterAdmin(login, mdp);
                             ConsoleStyle.succes("Connexion réussie !");
                             new MenuAdmin(gestion).afficherMenu();
                         }
                     }
                 }
-                case 2 ->{
+                case 2 -> {
                     ConsoleStyle.ligneSimple();
                     System.out.print(ConsoleStyle.JAUNE + "  Avez deja un compte (oui/non) ?     : " + ConsoleStyle.RESET);
-                    String reponse=sc.nextLine();
-                    if(reponse.equals("oui")){
+                    String reponse = sc.nextLine();
+                    if (reponse.equals("oui")) {
                         System.out.print(ConsoleStyle.JAUNE + "  [LOGIN/Connexion] Nom    : " + ConsoleStyle.RESET);
                         String login = sc.nextLine();
                         System.out.print(ConsoleStyle.JAUNE + "  Mot de passe : " + ConsoleStyle.RESET);
@@ -81,15 +81,15 @@ public class Main {
                         } else {
                             ConsoleStyle.erreur("Login ou mot de passe incorrect.");
                         }
-                    }else if(reponse.equals("non")){
+                    } else if (reponse.equals("non")) {
                         System.out.print(ConsoleStyle.JAUNE + "  [SIGNUP/inscription] Nom    : " + ConsoleStyle.RESET);
                         String login = sc.nextLine();
                         System.out.print(ConsoleStyle.JAUNE + "  Mot de passe : " + ConsoleStyle.RESET);
                         String mdp = sc.nextLine();
-                        if(Authentification.loginExisteAdmin(login)){
-                            System.out.println(login+" possede deja un compte");
-                        }else{
-                            Authentification.ajouterResStruct(login,mdp);
+                        if (Authentification.loginExisteAdmin(login)) {
+                            System.out.println(login + " possede deja un compte");
+                        } else {
+                            Authentification.ajouterResStruct(login, mdp);
                             ConsoleStyle.succes("Connexion réussie !");
                             new MenuResponsableStructure(gestion).afficherMenu();
                         }
@@ -102,6 +102,6 @@ public class Main {
                 default -> ConsoleStyle.erreur("Choix invalide.");
             }
         } while (choix != 0);
-        sc.close(); 
+        sc.close();
     }
-}
+                            }
